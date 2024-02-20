@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/style.css">
+    <link rel="stylesheet" href="/static/bootstrap-5.0.2-dist/css/bootstrap.css">
+    {%for t in title%}
+    <title>{{t.article.title}}</title>
+    {%endfor%}
+</head>
+<body>
+    <div class="container">
+        {%for t in sana%}
+        <h1>{{t.date|slice:":3"}}</h1>
+        {%endfor%}
+        <div class="row">
+            {%for t in title%}
+            <div class="col-12">
+                <img src="{{t.image.url}}" alt="Bu yerda rasm bor">
+                <p>{{t.text}}</p>
+                <a href="/{{t.id}}/delete/"><button type="submit">Delete</button></a>
+                <a href="#"><button type="submit">Edit</button></a>
+            </div>
+            {%endfor%}
+        </div>
+        <div class="row footer">
+            <p>© 2024 Asilbek.com</p>
+        </div>
+    </div>
+</body>
+</html>
